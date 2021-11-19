@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+
+<div class="container mt-4">
+  <div class="v-tab">
+    
+    <ul class="tab__head">
+      <li class="active" rel="tab1">
+        <span>Clock</span>
+      </li>
+      <li rel="tab2">
+        <span>Stopwatch</span>
+      </li>
+      <li rel="tab3">
+        <span>Timer</span>
+      </li>
+    </ul>
+    
+    <div class="tab__container">
+    
+      <div id="tab1" class="tab__content">
+
+        <div class="container">
+          <div class="wrapper">
+            <!-- Hours -->
+            <div class="box" id="hrs">00</div>
+            <span class="dots">:</span>
+            <!-- Minutes -->
+            <div class="box" id="mins">00</div>
+            <span class="dots">:</span>
+            <!-- Seconds -->
+            <div class="box" id="secs">00</div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div id="tab2" class="tab__content">
+        <div class="container ">
+          <div id="stopwatch"> 
+            <div class="time">
+              <!-- Hours -->
+              <div class="box" id="sw-hrs">00</div>
+              <span class="dots">:</span>
+              <!-- Minutes -->
+              <div class="box" id="sw-mins">00</div>
+              <span class="dots">:</span>
+              <!-- Seconds -->
+              <div class="box" id="sw-secs">00</div>
+              <span class="dots">:</span>
+              <!-- Miliseconds -->
+              <div class="box" id="sw-msecs">00</div>
+            </div>
+            
+
+            <div class="buttons">
+              <button class='start' id='start'>start</button>
+              <button class='reset'>reset</button>
+              <button class='lap'>lap</button>
+              <button class='clear-lap'>Clear Laps</button>
+            </div>
+
+            <ul class="laps">
+              
+            </ul>
+   
+          </div>
+
+   
+
+        </div>
+      </div>  
+    
+      <div id="tab3" class="tab__content">
+        <div class="container">
+          <div id="timer">
+            <div class="time">
+              <div class="box">
+                <input type="number" min='0' max="24" id='t-hours' placeholder="00">
+                <span>HRS</span>
+              </div>
+              <div class="box">
+                <input type="number" min='0' max="59" id='t-minutes' placeholder="00">
+                <span>MINS</span>
+              </div>
+              <div class="box">
+                <input type="number" min='0' max="59"" id='t-seconds' placeholder="00">
+                <span>SECS</span>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <button id='start-time'>start</button>
+              <button id='reset'>reset</button>
+            </div>
+
+            <div class="times-up" id="times-up">
+              <h1>TIMES UP!!!</h1>
+              <button class='times-up-ok'>OK</button>
+            </div>
+          </div>
+
+         
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="javascript/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+:root {
+  --light-gray: hsl(0, 0%, 95%);
+  --black: hsl(0, 0%, 13%);
+  --orange: hsl(16, 100%, 44%);
+  --gray: hsl(0, 0%, 39%);
+
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+}
+
+/* TAB / CLOCK*/
+/* TAB / CLOCK*/
+/* TAB / CLOCK*/
+
+.tab__head {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  height: 3.2rem;
+  padding: 0;
+  font-family: "Orbitron", sans-serif;
+}
+
+.tab__head li {
+  position: relative;
+  cursor: pointer;
+  width: 80%;
+  height: 100%;
+  background-color: var(--black);
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab__head li span {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.tab__head li:hover {
+  background: #111;
+}
+
+.tab__head li.active {
+  background: #010;
+  color: var(--orange);
+  border-bottom: 5px solid var(--orange);
+}
+
+.tab__head li.active span {
+  color: var(--orange);
+}
+
+.tab__container {
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+}
+
+.tab__content {
+  height: 100%;
+  min-height: 100%;
+  padding: 1rem;
+  display: none;
+}
+
+.tab__content .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 100%;
+}
+
+.tab__content .container .wrapper {
+  background-color: hsla(0, 0%, 75%, 0.2);
+  border: 1px solid #7777;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tab__content .container .wrapper::after {
+  content: "";
+  background-color: var(--orange);
+  width: 85px;
+  height: 4px;
+  display: block;
+  bottom: 0;
+  position: absolute;
+  animation: ltr 10s infinite backwards linear;
+}
+
+@keyframes ltr {
+  0% {
+    right: 10%;
+  }
+  50% {
+    right: 70%;
+  }
+  100% {
+    right: 10%;
+  }
+}
+
+.tab__content .container .wrapper .box {
+  /* font-family: "Orbitron", sans-serif; */
+  padding: 0rem 0.3rem;
+  color: var(--white);
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-shadow: 1px 5px 5px var(--black);
+}
+
+.tab__content .container .wrapper .box#secs {
+  color: var(--orange);
+}
+
+.tab__content .container .wrapper .dots {
+  color: var(--white);
+  font-size: 3rem;
+  margin: 0rem 1rem;
+}
+
+/* STOPWATCH */
+/* STOPWATCH */
+/* STOPWATCH */
+
+#stopwatch {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+#stopwatch .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#stopwatch .time .box {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 2.6rem;
+  text-shadow: 1px 5px 5px var(--black);
+}
+
+#stopwatch .time .box#sw-msecs {
+  color: var(--orange);
+}
+
+#stopwatch .time .dots {
+  color: var(--white);
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin: 0rem 0.4rem;
+}
+
+#stopwatch .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#stopwatch .buttons button {
+  padding: 0.3rem 1rem;
+  margin: 0rem 0.3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid var(--white);
+  color: var(--white);
+  transition: 0.3s linear;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 0.6rem;
+}
+
+#stopwatch .buttons button:hover {
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+#stopwatch .laps {
+  max-height: 300px;
+  margin-top: 0.5rem;
+  padding: 1rem 0rem;
+  text-align: center;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#stopwatch .laps li {
+  list-style: none;
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.2rem 0rem;
+}
+
+#stopwatch .laps li:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* TIMER */
+/* TIMER */
+/* TIMER */
+
+#timer {
+  padding: 1rem;
+  position: relative;
+}
+
+#timer .time {
+  display: flex;
+  align-items: center;
+}
+
+#timer .time .box {
+  margin: 0.4rem;
+}
+
+#timer .time .box input {
+  background-color: hsla(0, 0%, 75%, 0.2);
+  color: var(--white);
+  width: 80px;
+  height: 40px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#timer .time .box input#t-seconds {
+  color: var(--orange);
+}
+
+#timer .time span {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+#timer .buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 0.5rem;
+}
+
+#timer .buttons button {
+  outline: none;
+  border: none;
+  padding: 0.3rem 2rem;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: 0.3s linear;
+}
+
+#timer .buttons button:hover {
+  background: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+#timer .times-up {
+  border: 1px solid var(--white);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange);
+  letter-spacing: 3px;
+  text-shadow: 1px 1px var(--black);
+  background-color: hsla(0, 0%, 75%, 0.2);
+  backdrop-filter: blur(5px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  animation: textcolor infinite forwards ease-in-out 0.5s;
+}
+
+@keyframes textcolor {
+  from {
+    color: var(--orange);
+  }
+  to {
+    color: var(--white);
+  }
+}
+
+/* MEDIA */
+@media (min-width: 576px) {
+  .tab__head li span {
+    font-size: 1rem;
+  }
+
+  .tab__content .container .wrapper .box {
+    font-size: 3.4rem;
+  }
+
+  #stopwatch .time .box {
+    font-size: 3.4rem;
+  }
+
+  #stopwatch .buttons button {
+    font-size: 0.86rem;
+  }
+
+  #timer .time .box input {
+    width: 90px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .tab__head li span {
+    font-size: 1.2rem;
+  }
+  .tab__content .container .wrapper .box {
+    font-size: 4rem;
+  }
+  #stopwatch .time .box {
+    font-size: 4rem;
+  }
+
+  #stopwatch .buttons button {
+    font-size: 1rem;
+  }
+
+  #timer .time .box input {
+    width: 100px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tab__head li span {
+    font-size: 1.5rem;
+  }
+  .tab__content .container .wrapper .box {
+    font-size: 5rem;
+  }
+  #stopwatch .time .box {
+    font-size: 5rem;
+  }
+  #timer .time .box input {
+    width: 120px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
